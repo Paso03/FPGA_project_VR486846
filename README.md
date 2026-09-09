@@ -570,34 +570,6 @@ system.hwh
 system.tcl
 ```
 
----
-
-# Struttura del repository
-
-La struttura del repository è:
-
-```text
-FPGA-Heart-Rate-Monitor/
-│
-├── heart_rate_ip/
-│   ├── heart_rate_monitor.v
-│   ├── tb_heart_rate_monitor.v
-│   ├── heart_rate_ip
-│   └── heart_rate_ip_AXI
-│
-├── heart_rate.py
-├── signal_generator.py
-│
-├── system.bit
-├── system.hwh
-├── system.tcl
-│
-├── README.md
-└── requirements.txt
-```
-
----
-
 # Requisiti software
 
 Per la parte Python sono necessari:
@@ -606,39 +578,10 @@ Per la parte Python sono necessari:
 - NumPy;
 - Matplotlib.
 
-Le dipendenze possono essere installate tramite:
-
-```bash
-pip install -r requirements.txt
-```
-
 Per la modalità `hardware` è inoltre necessario l'ambiente **PYNQ** sulla scheda PYNQ-Z1.
 
 ---
 
-# Installazione
-
-Creare eventualmente un ambiente virtuale Python:
-
-```bash
-python -m venv .venv
-```
-
-Attivarlo.
-
-Su Windows PowerShell:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-Installare le dipendenze:
-
-```bash
-pip install -r requirements.txt
-```
-
----
 
 # Esecuzione
 
@@ -665,43 +608,6 @@ python heart_rate.py --mode hardware --duration 10
 ```bash
 python heart_rate.py --mode hardware
 ```
-
----
-
-# Stato del progetto
-
-Le principali parti del progetto sono state implementate:
-
-- [x] Generazione sintetica del segnale ECG
-- [x] Generazione delle onde P, Q, R, S e T
-- [x] Variabilità della frequenza cardiaca
-- [x] Variabilità della morfologia
-- [x] Baseline wander
-- [x] Rumore gaussiano
-- [x] Ground truth dei picchi R
-- [x] Algoritmo di rilevamento dei battiti in Verilog
-- [x] Periodo refrattario
-- [x] Calcolo degli intervalli RR
-- [x] Calcolo del BPM medio
-- [x] Calcolo del BPM minimo
-- [x] Calcolo del BPM massimo
-- [x] Conteggio dei battiti
-- [x] Conteggio dei campioni
-- [x] Testbench Verilog
-- [x] IP personalizzato Vivado
-- [x] Interfaccia AXI-Lite
-- [x] Integrazione con Zynq Processing System
-- [x] Generazione del bitstream
-- [x] Verifica offline
-- [x] Interfaccia Python per PYNQ
-
-La verifica offline dell'intero algoritmo ha prodotto:
-
-```text
-STATUS: PASS
-```
-
----
 
 # Possibili sviluppi futuri
 
